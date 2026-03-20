@@ -1,0 +1,126 @@
+1. Forecast monitoring app
+    Dataset
+       Actual generation
+       Forecasted generation
+    Application
+2. Analysis
+3. Submission
+
+The challenge involves two parts: (i) building a forecast monitoring app and (ii) doing analysis of
+the forecasts.
+
+
+   1.​Forecast monitoring app
+
+
+
+
+                                       Figure 1: Sample UI
+The goal of this app is to help the end user intuitively understand the accuracy of the forecasts.
+The quantity being forecasted is the national-level wind power generation in the United
+Kingdom.
+
+An example design is provided in Figure 1. For a time range between “start time” and “end time”
+(selected via calendar widgets), the app displays the actual generation values (blue line) and
+the forecasted generation values (green line). The latest forecasts that were created at least 4
+hours (Forecast horizon - configurable using slider) before each target time are shown. For
+example, for a target time of 24/05/24 18:00, it shows the value of the latest forecast which was
+created before 24/05/24 14:00 (i.e., 18 - 4). Here, target time corresponds to the time at which
+wind power was generated and measured.
+
+
+Dataset
+
+Actual generation
+The actual generation data for this is available at
+https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/FUELHH/stream. Please
+consider values corresponding to “fuelType” “WIND”. The relevant fields are:
+
+   -​   "startTime": the target time (resolution of 30 minutes)
+   -​   “generation”: generated wind power
+
+
+
+Forecasted generation
+The forecasts are available at
+https://bmrs.elexon.co.uk/api-documentation/endpoint/datasets/WINDFOR/stream. Relevant
+fields:
+     -​ “startTime”: similar to the "startTime" field in the actuals dataset
+     -​ "publishTime": the time at which the forecast was created
+     -​ “generation": similar to the "generation" field in the actuals dataset
+
+Please consider data only from January 2025 onwards. Please consider the values where the
+forecast horizon is between 0-48 hrs.
+
+For any missing forecast data, ignore them and don’t plot any values.
+
+Please note that the numbers shown in Figure 1 are for illustrative purposes only and may not
+match with the data available in the API.
+Application
+
+Please build the application using any tech stack you’re strong at. You are free to use AI tools to
+assist with building this application (please mention it explicitly in the README if you’ve used AI
+tools). Please deploy the sample application in vercel/heroku or similar platforms.
+
+Please ensure that both the web and mobile views work well. If you feel that the app can be
+improved beyond the design provided in Figure 1, please feel free to do so.
+
+
+
+   2.​Analysis
+
+For this analysis, you can use AI tools for low-level help (e.g., fixing bugs, calling a library
+function). Please do not use AI tools to do this end-to-end. The goal is to see your own
+analytical thinking derived from first principles. We want to understand your reasoning process,
+so please document every step clearly, explain your assumptions, trade-offs, and conclusions in
+detail, and show the logical path you followed.
+
+
+
+
+   1.​ Please create a Jupyter notebook that analyzes the forecast dataset. The goal of the
+       analysis is to understand the error characteristics of the model. The analysis is
+       open-ended. Some ideas: mean, median and p99 error; variation in error as forecast
+       horizon changes, error at different times of the day.
+   2.​ Wind power generation is heavily dependent on weather. Based on the past wind
+       generation data, we need to understand how reliably wind power can meet our electricity
+       demand. Please analyze historical actual generation of wind. Based on the analysis,
+       please recommend how many MW of wind power can we reliably expect to be available
+       to meet the electricity demand. The answer is subjective. Hence, support your
+       recommendation with relevant reasoning and evidence. Please share a Jupyter
+       notebook with this analysis and recommendation.
+
+
+
+   3.​Submission
+Please create a git repo to submit your code and notebooks. Please include a README
+containing:
+   -​ Details of the files and directories present
+   -​ How to start the application
+   -​ Link to the vercel/heroku app
+Please create a zip archive of the git repo, upload it to your google drive and share the link
+(accessible to all). Please make sure to include the .git directory in the repo, so that we’ll be
+able to review the commit history too.
+
+Please create an unlisted youtube video to show the demo of your application and to summarize
+the analysis you’ve done. Please limit it to a maximum of 5 minutes. A screen recording with
+your narration would do. Please make sure to cover the work you did on front-end, back-end
+and analysis.
+
+Please submit using this form: Full Stack SWE challenge submission – Fill out form. Please note
+that all the fields are mandatory.
+
+—---
+
+Submitting the above form would be sufficient. We’ll be reviewing all the submissions. No need
+to send a separate message via wellfound with your submission.
+
+There’s no deadline for submission. Earlier the better, as the hiring process is ongoing.
+
+We strongly recommend that you treat your submission with the highest level of rigor and
+attention to detail. Everything you submit must be of the utmost quality, this assignment is
+specifically designed to reflect the standard of work we expect from a Software Engineer on our
+team.
+
+Best wishes!
+
