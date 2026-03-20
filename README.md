@@ -84,7 +84,7 @@ NEXT_PUBLIC_API_URL=https://your-app.railway.app
 
 ## Deployed Application
 
-- Frontend: https://your-frontend.vercel.app
+- Frontend: https://wf-mon.vercel.app/dashboard
 - Backend: https://wfmon-production.up.railway.app
 
 Replace with your real URLs before submission.
