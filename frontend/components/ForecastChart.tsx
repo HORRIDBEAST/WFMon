@@ -109,10 +109,19 @@ export function ForecastChart({
           />
 
           <Tooltip
-            formatter={(value: number, name: string) => [
-              `${Math.round(value).toLocaleString()} MW`,
-              name === "actual" ? "Actual" : name === "forecast" ? "Forecast" : "Error",
-            ]}
+            formatter={(value, name) => {
+              const numericValue =
+                typeof value === "number" ? value : Number(value ?? 0);
+              const metricName = String(name);
+              return [
+                `${Math.round(numericValue).toLocaleString()} MW`,
+                metricName === "actual"
+                  ? "Actual"
+                  : metricName === "forecast"
+                  ? "Forecast"
+                  : "Error",
+              ];
+            }}
             labelStyle={{ fontWeight: 500 }}
             contentStyle={{
               borderRadius: 8,
