@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+httpx
+pandas
+numpy
+redis[asyncio]
+pydantic
+pydantic-settings
+sqlalchemy[asyncio]
+asyncpg
+python-dotenv
+
+#>uvicorn main:app --reload --port 8000
