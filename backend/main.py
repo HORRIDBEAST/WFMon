@@ -2,15 +2,10 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import logging
-import sys
-from pathlib import Path
 
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent))
-
-from backend.config           import get_settings
-from backend.services.cache   import CacheService
-from backend.routers          import timeseries, metrics
+from config           import get_settings
+from services.cache   import CacheService
+from routers          import timeseries, metrics
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

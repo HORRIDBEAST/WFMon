@@ -2,19 +2,15 @@ from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from datetime import datetime
 import asyncio
 import logging
-import sys
-from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-
-from backend.models.schemas import MetricsResponse
-from backend.services.fetcher  import fetch_actuals, fetch_forecasts
-from backend.services.aligner  import (
+from models.schemas import MetricsResponse
+from services.fetcher  import fetch_actuals, fetch_forecasts
+from services.aligner  import (
     build_actuals_df, build_forecasts_df, apply_horizon_filter,
 )
-from backend.services.errors   import compute_metrics
-from backend.services.cache    import CacheService
-from backend.config            import get_settings
+from services.errors   import compute_metrics
+from services.cache    import CacheService
+from config            import get_settings
 
 router = APIRouter(prefix="/metrics", tags=["metrics"])
 logger = logging.getLogger(__name__)

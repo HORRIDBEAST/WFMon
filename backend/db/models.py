@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Float, DateTime, Index
 from sqlalchemy.dialects.postgresql import UUID
-from backend.db.database import Base
+from db.database import Base
 import uuid
 
 class ActualGeneration(Base):
