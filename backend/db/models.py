@@ -1,7 +1,11 @@
 from sqlalchemy import Column, String, Float, DateTime, Index
 from sqlalchemy.dialects.postgresql import UUID
-from backend.db.database import Base
 import uuid
+
+try:
+    from backend.db.database import Base
+except ModuleNotFoundError:
+    from db.database import Base
 
 class ActualGeneration(Base):
     __tablename__ = "actual_generation"

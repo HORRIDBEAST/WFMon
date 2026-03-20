@@ -2,19 +2,29 @@ from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from datetime import datetime
 import asyncio
 import logging
-import sys
-from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-
-from backend.models.schemas import TimeseriesResponse
-from backend.services.fetcher  import fetch_actuals, fetch_forecasts
-from backend.services.aligner  import (
-    build_actuals_df, build_forecasts_df,
-    apply_horizon_filter, to_response_lists,
-)
-from backend.services.cache    import CacheService
-from backend.config            import get_settings
+try:
+    from backend.models.schemas import TimeseriesResponse
+    from backend.services.fetcher import fetch_actuals, fetch_forecasts
+    from backend.services.aligner import (
+        build_actuals_df,
+        build_forecasts_df,
+        apply_horizon_filter,
+        to_response_lists,
+    )
+    from backend.services.cache import CacheService
+    from backend.config import get_settings
+except ModuleNotFoundError:
+    from models.schemas import TimeseriesResponse
+    from services.fetcher import fetch_actuals, fetch_forecasts
+    from services.aligner import (
+        build_actuals_df,
+        build_forecasts_df,
+        apply_horizon_filter,
+        to_response_lists,
+    )
+    from services.cache import CacheService
+    from config import get_settings
 
 router = APIRouter(prefix="/timeseries", tags=["timeseries"])
 logger = logging.getLogger(__name__)
