@@ -84,10 +84,18 @@ NEXT_PUBLIC_API_URL=https://your-app.railway.app
 
 ## Deployed Application
 
-- Frontend: https://wf-mon.vercel.app/dashboard
+- Frontend: https://wf-mon.vercel.app
 - Backend: https://wfmon-production.up.railway.app
 
-Replace with your real URLs before submission.
+## Demo Video
+
+- Unlisted YouTube: PASTE_YOUR_UNLISTED_YOUTUBE_LINK_HERE
+
+## Submission Artifacts
+
+- GitHub repository: https://github.com/HORRIDBEAST/WFMon
+- Google Drive zip (with .git included): PASTE_GOOGLE_DRIVE_LINK_HERE
+- Submission form: Full Stack SWE challenge submission (all fields mandatory)
 
 ## Submission Checklist
 
