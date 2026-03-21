@@ -89,12 +89,12 @@ NEXT_PUBLIC_API_URL=https://your-app.railway.app
 
 ## Demo Video
 
-- Unlisted YouTube: PASTE_YOUR_UNLISTED_YOUTUBE_LINK_HERE
+- Unlisted YouTube: https://youtu.be/TIO7CNg9Hfg
 
 ## Submission Artifacts
 
 - GitHub repository: https://github.com/HORRIDBEAST/WFMon
-- Google Drive zip (with .git included): PASTE_GOOGLE_DRIVE_LINK_HERE
+- Google Drive zip (with .git included): https://drive.google.com/file/d/1HSvo2pappXqIS3f3Uf9zyg-JOlKcaJiY/view?usp=sharing
 - Submission form: Full Stack SWE challenge submission (all fields mandatory)
 
 ## Submission Checklist
